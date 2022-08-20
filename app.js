@@ -1,32 +1,33 @@
-let val
+// document.getElementById()
+// console.log(document.getElementById("task-title"))
+const taskTitle = document.getElementById("task-title")
 
-val = document
-val = document.all[2]
-val = document.all.length
-val = document.head
-val = document.body
-val = document.doctype
-val = document.domain
-val = document.URL
-val = document.characterSet
-val = document.contentType
+// Get informations from the element
 
-val = document.forms
-val = document.forms[0]
-val = document.forms[0].id
-val = document.forms[0].method
-val = document.forms[0].action
+// console.log(taskTitle.id)
+// console.log(taskTitle.className)
 
-val = document.images
+// Change styling
+taskTitle.style.background = "#666"
+taskTitle.style.color = "#fff"
+taskTitle.style.padding = "5px"
+// document.getElementById("task-title").style.display = "none"
 
-val = document.scripts
-val = document.scripts[2].getAttribute("src")
+// Chnage Content
+taskTitle.textContent = "Task Title"
+taskTitle.innerText = "My Tasks"
+taskTitle.innerHTML = '<span style="color:red">Task List</span>'
 
-let scripts = document.scripts
+// document.querySelector()
 
-let scriptsArr = Array.from(scripts)
-scriptsArr.forEach((script) => {
-  console.log(script)
-})
+console.log(document.querySelector("#task-title"))
+console.log(document.querySelector(".card-title"))
+console.log(document.querySelector("h5"))
 
-console.log(val)
+document.querySelector("li").style.color = "red"
+document.querySelector("ul li").style.color = "blue"
+
+document.querySelector("li:last-child").style.color = "red"
+document.querySelector("li:nth-child(3)").style.color = "yellow"
+document.querySelector("li:nth-child(odd)").style.background = "pink"
+document.querySelector("li:nth-child(even)").style.background = "orange"
