@@ -1,23 +1,32 @@
 let val
 
-const today = new Date()
-let birthday = new Date("9-10-2000 15:14:00")
-birthday = new Date("September 10 2000")
-birthday = new Date("9/10/2000")
+val = document
+val = document.all[2]
+val = document.all.length
+val = document.head
+val = document.body
+val = document.doctype
+val = document.domain
+val = document.URL
+val = document.characterSet
+val = document.contentType
 
-val = today.getMonth()
-val = today.getDate()
-val = today.getDay()
-val = today.getFullYear()
-val = today.getHours()
-val = today.getMinutes()
-val = today.getSeconds()
-val = today.getMilliseconds()
-val = today.getTime()
+val = document.forms
+val = document.forms[0]
+val = document.forms[0].id
+val = document.forms[0].method
+val = document.forms[0].action
 
-birthday.setMonth(11)
-birthday.setDate(20)
-birthday.setFullYear(2002)
-birthday.setHours(22)
+val = document.images
+
+val = document.scripts
+val = document.scripts[2].getAttribute("src")
+
+let scripts = document.scripts
+
+let scriptsArr = Array.from(scripts)
+scriptsArr.forEach((script) => {
+  console.log(script)
+})
 
 console.log(val)
