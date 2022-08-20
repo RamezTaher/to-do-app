@@ -1,57 +1,39 @@
-//Create some arrays
-const numbers = [12, 455, 1225, 366, 412, 5, 6, 8]
-const numbers2 = new Array(22, 45, 33, 76, 54)
-const fruits = ["Apple", "Orange", "Pear", "Banana"]
-const mixed = [2, "Ramez", true, undefined, null, { a: 1, b: 2 }, new Date()]
+// Create Object
+const person = {
+  firstName: "Ramez",
+  lastName: "Taher",
+  age: 19,
+  hobbies: ["Sports", "chess"],
+  address: {
+    city: "data",
+    state: "data",
+  },
+  getBirthYear: function () {
+    return 2022 - this.age
+  },
+}
 
 let val
 
-// Get Array length
-val = numbers.length
+val = person
+// Get specific value
 
-// Check if is array
-val = Array.isArray(numbers)
+val = person.firstName
+val = person["lastName"]
+val = person.age
+val = person.hobbies[1]
+val = person.address.state
+val = person.address["city"]
+val = person.getBirthYear()
 
-// Get Single value
-val = numbers[0]
+const people = [
+  { name: "data", age: 16 },
+  { name: "daa", age: 14 },
+  { name: "datt", age: 16 },
+]
 
-// Insert into array
-numbers[2] = 100
-
-// Find index of value
-val = numbers.indexOf(366)
-
-// MUTATING ARRAYS
-// add ele to end
-numbers.push(250)
-// add ele to front
-numbers.unshift(250)
-// take off from end
-numbers.pop()
-// take off from end
-numbers.shift()
-// Splice value
-numbers.splice(1, 3)
-// Reverse
-numbers.reverse()
-// Concatenate array
-val = numbers.concat(numbers2)
-// Sorting arrays
-val = fruits.sort()
-val = numbers.sort()
-
-// Use the "Compare Function"
-val = numbers.sort(function (x, y) {
-  return x - y
-})
-
-val = numbers.sort((x, y) => {
-  return y - x
-})
-
-// Find
-val = numbers.find((num) => {
-  return num < 50
-})
+for (let i = 0; i < people.length; i++) {
+  console.log(people[i].name)
+}
 
 console.log(val)
