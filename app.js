@@ -1,25 +1,40 @@
-const form = document.querySelector("form")
-const taskInput = document.getElementById("task")
+// Set Local storage items
+// localStorage.setItem("name", "Ramez")
+// localStorage.setItem("age", 30)
+// Set session storage item
+// sessionStorage.setItem("name", "Ramez")
 
-// Clear Input
-taskInput.value = ""
+// Remove item form storage
+// localStorage.removeItem("name")
 
-form.addEventListener("submit", runEvent)
+// Get from storage
+// const name = localStorage.getItem("name")
+// const age = localStorage.getItem("age")
 
-taskInput.addEventListener("keydown", runEvent)
-// keydown
-// keyup
-// keypress
+// Clear local Storage
+// localStorage.clear()
+// console.log(name, age)
 
-// focus
-// blur
-// cut
-// paste
-// input
+document.querySelector("form").addEventListener("submit", function (e) {
+  e.preventDefault()
+  const task = document.getElementById("task").value
 
-function runEvent(e) {
-  console.log(`event type: ${e.type}`)
-  console.log(e.target.value)
-  // Get input value
-  console.log(taskInput.value)
-}
+  let tasks
+
+  if (localStorage.getItem("tasks") === null) {
+    tasks = []
+  } else {
+    tasks = JSON.parse(localStorage.getItem("tasks"))
+  }
+
+  tasks.push(task)
+
+  localStorage.setItem("tasks", JSON.stringify(tasks))
+  alert("Task Saved")
+})
+
+const tasks = JSON.parse(localStorage.getItem("tasks"))
+
+tasks.forEach((task) => {
+  console.log(task)
+})
