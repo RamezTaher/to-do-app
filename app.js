@@ -1,55 +1,13 @@
-// REPLACE ELEMENT
+document.querySelector(".clear-tasks").addEventListener("click", onClick)
 
-// Create Element
-const newHeading = document.createElement("h2")
+function onClick(e) {
+  // console.log("Button Clicked")
 
-// Add id
-newHeading.id = "task-title"
+  let val
+  val = e.target
+  val = e.target.id
+  val = e.target.className
+  val = e.target.classList
 
-// New text Node and append
-newHeading.appendChild(document.createTextNode("Task List"))
-
-// Get the old heading
-const oldHeading = document.getElementById("task-title")
-
-// Get the parent elment
-const cardAction = document.querySelector(".card-action")
-
-// Replace
-cardAction.replaceChild(newHeading, oldHeading)
-
-// REMOVE ELEMENT(S)
-const lis = document.querySelectorAll("li")
-const list = document.querySelector("ul")
-
-// Remove list item
-// lis[0].remove()
-
-// Remove child element
-list.removeChild(lis[3])
-
-// CLASSES & ATTR
-const firstLi = document.querySelector("li:first-child")
-const link = firstLi.children[0]
-
-let val
-
-// Classes
-val = link.className
-val = link.classList
-val = link.classList[0]
-link.classList.add("test")
-link.classList.remove("test")
-val = link
-
-// Attributes
-
-val = link.getAttribute("href")
-val = link.setAttribute("href", "https://google.com")
-link.setAttribute("title", "google")
-val = link.hasAttribute("title")
-link.removeAttribute("title")
-
-val = link
-
-console.log(val)
+  console.log(val)
+}
