@@ -1,32 +1,31 @@
-// document.getElementsByClassName
+// Create element
+const li = document.createElement("li")
 
-const items = document.getElementsByClassName("collection-item")
+// Add Class
+li.className = "collection-item"
 
-console.log(items)
-items[0].style.color = "red"
-items[3].textContent = "Hello World"
+// Add Id
+li.id = "new item"
 
-const listItems = document
-  .querySelector("ul")
-  .getElementsByClassName("collection-item")
+// Add attribute
+li.setAttribute("title", "New Item")
 
-console.log(listItems)
+// Create text node and append
+li.appendChild(document.createTextNode("new Task"))
 
-// document.getElementsByTagName
-let lis = document.getElementsByTagName("li")
-console.log(lis)
+// Create new link element
+const link = document.createElement("a")
 
-// Convert HTML Collection into array
-lis = Array.from(lis)
-lis.forEach((li, idx) => {
-  console.log(li.className)
-  li.textContent = `${idx + 1} : Hello`
-})
-console.log(lis)
+// Add Classes
+link.className = "delete-item secondary-content"
 
-// document.querySelectorAll
-const items = document.querySelectorAll("ul.collection li.collection-item")
-console.log(items)
-items.forEach(function (item, idx) {
-  item.textContent = `${idx + 1} : Hello`
-})
+// Add Icon HTml
+link.innerHTML = '<i class="fa fa-remove"></i>'
+
+// Append link into li
+li.appendChild(link)
+
+// Append li as child to ul
+document.querySelector("ul.collection").appendChild(li)
+
+console.log(link)
