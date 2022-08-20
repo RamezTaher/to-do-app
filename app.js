@@ -1,33 +1,32 @@
-// document.getElementById()
-// console.log(document.getElementById("task-title"))
-const taskTitle = document.getElementById("task-title")
+// document.getElementsByClassName
 
-// Get informations from the element
+const items = document.getElementsByClassName("collection-item")
 
-// console.log(taskTitle.id)
-// console.log(taskTitle.className)
+console.log(items)
+items[0].style.color = "red"
+items[3].textContent = "Hello World"
 
-// Change styling
-taskTitle.style.background = "#666"
-taskTitle.style.color = "#fff"
-taskTitle.style.padding = "5px"
-// document.getElementById("task-title").style.display = "none"
+const listItems = document
+  .querySelector("ul")
+  .getElementsByClassName("collection-item")
 
-// Chnage Content
-taskTitle.textContent = "Task Title"
-taskTitle.innerText = "My Tasks"
-taskTitle.innerHTML = '<span style="color:red">Task List</span>'
+console.log(listItems)
 
-// document.querySelector()
+// document.getElementsByTagName
+let lis = document.getElementsByTagName("li")
+console.log(lis)
 
-console.log(document.querySelector("#task-title"))
-console.log(document.querySelector(".card-title"))
-console.log(document.querySelector("h5"))
+// Convert HTML Collection into array
+lis = Array.from(lis)
+lis.forEach((li, idx) => {
+  console.log(li.className)
+  li.textContent = `${idx + 1} : Hello`
+})
+console.log(lis)
 
-document.querySelector("li").style.color = "red"
-document.querySelector("ul li").style.color = "blue"
-
-document.querySelector("li:last-child").style.color = "red"
-document.querySelector("li:nth-child(3)").style.color = "yellow"
-document.querySelector("li:nth-child(odd)").style.background = "pink"
-document.querySelector("li:nth-child(even)").style.background = "orange"
+// document.querySelectorAll
+const items = document.querySelectorAll("ul.collection li.collection-item")
+console.log(items)
+items.forEach(function (item, idx) {
+  item.textContent = `${idx + 1} : Hello`
+})
