@@ -1,39 +1,23 @@
-// Create Object
-const person = {
-  firstName: "Ramez",
-  lastName: "Taher",
-  age: 19,
-  hobbies: ["Sports", "chess"],
-  address: {
-    city: "data",
-    state: "data",
-  },
-  getBirthYear: function () {
-    return 2022 - this.age
-  },
-}
-
 let val
 
-val = person
-// Get specific value
+const today = new Date()
+let birthday = new Date("9-10-2000 15:14:00")
+birthday = new Date("September 10 2000")
+birthday = new Date("9/10/2000")
 
-val = person.firstName
-val = person["lastName"]
-val = person.age
-val = person.hobbies[1]
-val = person.address.state
-val = person.address["city"]
-val = person.getBirthYear()
+val = today.getMonth()
+val = today.getDate()
+val = today.getDay()
+val = today.getFullYear()
+val = today.getHours()
+val = today.getMinutes()
+val = today.getSeconds()
+val = today.getMilliseconds()
+val = today.getTime()
 
-const people = [
-  { name: "data", age: 16 },
-  { name: "daa", age: 14 },
-  { name: "datt", age: 16 },
-]
-
-for (let i = 0; i < people.length; i++) {
-  console.log(people[i].name)
-}
+birthday.setMonth(11)
+birthday.setDate(20)
+birthday.setFullYear(2002)
+birthday.setHours(22)
 
 console.log(val)
